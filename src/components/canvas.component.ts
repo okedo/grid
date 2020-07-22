@@ -1,13 +1,12 @@
 import { PointLocation } from "../models/point-location.model";
 import { Rectangle } from "../models/rectangle.model";
 
-export class CanvasConponent {
-    private canvasId: string;
+export class CanvasComponent {
     private ctx: any;
     private canvas: any;
 
-    constructor(id: string) {
-        this.canvas = document.getElementById(id);
+    constructor(private id: string) {
+        this.canvas = document.getElementById(this.id);
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;
         this.ctx = this.canvas.getContext('2d');

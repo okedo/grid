@@ -1,19 +1,20 @@
-import { Point } from "../models/point.model";
+import { CanvasComponent } from "./canvas.component";
+import { Rectangle } from "../models/rectangle.model";
+import { PointLocation } from "../models/point-location.model";
 
 export class FieldComponent {
-    private pointsList: Array<Point>;
-
-    constructor(points: Array<Point>) {
-        this.pointsList = points;
+    constructor(private canvas: CanvasComponent) {
+        this.canvas = canvas;
     }
 
-    public drawPoints(): void {
-        console.log(this.pointsList);
+    public draw(): void {
+        const rectangle = new Rectangle(
+            new PointLocation(0, 0),
+            new PointLocation(window.innerWidth-170, 0),
+            new PointLocation(0, window.innerHeight-170),
+            new PointLocation(window.innerWidth-170, window.innerHeight-170)
+        );
 
-        this.pointsList.forEach(this.drawPoint)
-    }
-
-    public drawPoint(point: Point): void {
-        console.log(point);
+        this.canvas.drawRect(rectangle);
     }
 }
