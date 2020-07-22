@@ -1,0 +1,14 @@
+{
+  "name": "grids",
+  "version": "0.0.0",
+  "description": "Grid battle ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "grid"
+  ],
+  "author": "okedo",
+  "license": "ISC"
+}
