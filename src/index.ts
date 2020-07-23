@@ -12,9 +12,9 @@ const init = () => {
     }
 
     const rect = new Rectangle(
-        new PointLocation(25, 25),
+        new PointLocation(50, 25),
         new PointLocation(areaDimensions.x, 25),
-        new PointLocation(25, areaDimensions.y),
+        new PointLocation(50, areaDimensions.y),
         new PointLocation(areaDimensions.x, areaDimensions.y)
     );
 

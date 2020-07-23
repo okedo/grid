@@ -7,8 +7,8 @@ export class CanvasComponent {
 
     constructor(private id: string) {
         this.canvas = document.getElementById(this.id);
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
+        this.canvas.width = window.innerWidth-100;
+        this.canvas.height = window.innerHeight-100;
         this.ctx = this.canvas.getContext('2d');
     }
     public drawRect(rect: Rectangle) {

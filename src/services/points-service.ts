@@ -9,15 +9,15 @@ export class PointsService {
     private pointsLocations: Array<PointLocation> = [];
     private _points: Array<Point> = [];
 
-    constructor(private canvas: CanvasComponent, private rect: Rectangle) {
+    constructor(private canvas: CanvasComponent, private rectangle: Rectangle) {
         this.init();
     }
 
     public init(): void {
         const minDistance = 50;
 
-        const rowsCount = Math.round(this.rect.height / minDistance);
-        const columnCount = Math.round(this.rect.width / minDistance);
+        const rowsCount = Math.round(this.rectangle.height / minDistance);
+        const columnCount = Math.round(this.rectangle.width / minDistance);
 
         this.pointsLocations = this.getPointsLocations(minDistance, rowsCount, columnCount);
         this.fillPoints(this.pointsLocations);
@@ -38,12 +38,18 @@ export class PointsService {
     }
 
     private getPointsLocations(minDistance: number, rowsCount: number, columnCount: number): Array<PointLocation> {
-        return PointsLocationHelper.fillColumn(columnCount, rowsCount, minDistance, 0).map(
+        return PointsLocationHelper.fillColumn(
+            columnCount,
+            rowsCount,
+            minDistance,
+            this.rectangle.leftTop.y,
+            this.rectangle.leftTop.x
+        ).map(
             (point: PointLocation) => this.noicePoint(point, minDistance)
         );
     }
 
     private noicePoint(point: PointLocation, minDistance: number): PointLocation {
-        return PointsLocationHelper.addNoise(point, minDistance)
+        return PointsLocationHelper.addNoise(point, minDistance);
     }
 }
