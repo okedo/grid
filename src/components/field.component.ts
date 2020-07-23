@@ -10,9 +10,9 @@ export class FieldComponent {
     public draw(): void {
         const rectangle = new Rectangle(
             new PointLocation(0, 0),
-            new PointLocation(window.innerWidth-170, 0),
-            new PointLocation(0, window.innerHeight-170),
-            new PointLocation(window.innerWidth-170, window.innerHeight-170)
+            new PointLocation(window.innerWidth - 170, 0),
+            new PointLocation(0, window.innerHeight - 170),
+            new PointLocation(window.innerWidth - 170, window.innerHeight - 170)
         );
 
         this.canvas.drawRect(rectangle);
