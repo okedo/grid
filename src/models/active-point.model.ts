@@ -8,7 +8,7 @@ export class ActivePoint extends Point {
 
     public focused: boolean;
 
-    constructor(neighborhood: Array<Point>, location: PointLocation, team: TeamsEnum, health?: number) {
+    constructor(neighborhood: Array<string>, location: PointLocation, team: TeamsEnum, health?: number) {
         super(neighborhood, location);
         this.team = team;
         this.health = health || 100;

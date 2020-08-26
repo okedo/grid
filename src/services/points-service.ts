@@ -14,7 +14,7 @@ export class PointsService {
     }
 
     public init(): void {
-        const minDistance = 50;
+        const minDistance = 100;
 
         const rowsCount = Math.round(this.rectangle.height / minDistance);
         const columnCount = Math.round(this.rectangle.width / minDistance);
